@@ -5,14 +5,14 @@
         <input class="btn btn-default userButton" type="button" value="< Back" ng-click= "back()">
     </div>
     <dl>
-        <dt>Name</dt>
+        <dt class="defaultTextColor">Name</dt>
         <dd>{{ selectedUser.firstName  + selectedUser.lastName }}</dd>
-        <dt>Email</dt>
+        <dt class="defaultTextColor">Email</dt>
         <dd>{{ selectedUser.email }}</dd>
-        <dt>Address</dt>
+        <dt class="defaultTextColor">Address</dt>
         <dd> {{ selectedUser.address.street }}</dd>
         <dd> {{ selectedUser.address.city + ',' + selectedUser.address.state + ',' + selectedUser.address.country + ',' + selectedUser.address.zip }}</dd>
-        <dt>Comapny</dt>
+        <dt class="defaultTextColor">Comapny</dt>
         <dd> {{ selectedUser.company.name + '  ' +selectedUser.company.website }} </dd>
     </dl>
 
