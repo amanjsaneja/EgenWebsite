@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+
+    <div class="panel-heading userHeading" >
+        <div class="userText">Users</div>
+        <input class="btn btn-default" type="button" value="+ Add User" ng-click= "moveToAddUser()" style="color: #ff6600;border-color: #ff6600; float:right">
+    </div>
+
+    <!-- Table -->
+    <table class="table">
+        <thead>
+        <tr class="defaultTextColor">
+            <th></th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>CITY</th>
+            <th>COMPANY</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat ='user in listOfUsers' >
+            <td></td>
+            <td ><a href="#/users/{{user.id}}">{{user.firstName + ' ' + user.lastName }}</a></td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.address.city }}</td>
+            <td>{{ user.company.name }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
