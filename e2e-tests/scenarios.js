@@ -155,9 +155,10 @@ describe('Http Requests Test', function() {
 
         it('2. Try Success Add Operation', function() {
             // $httpBackend.when('POST', 'http://mocker.egen.io/users/').respond(200, '');
+            // $httpBackend.whenPOST('http://mocker.egen.io/users/').respond(function(){
+            //     return [200, {}, {}];
+            // });
             scope.submit();
-            $httpBackend.when('POST', 'http://mocker.egen.io/users/').respond(200, '');
-            // $httpBackend.whenPOST('http://mocker.egen.io/users',"").respond(200);
             expect(scope.added).toBe(true);
         });
 

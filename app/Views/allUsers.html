@@ -17,8 +17,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat ='user in listOfUsers' >
-            <td></td>
+        <tr  ng-repeat ='user in listOfUsers' >
+            <td><img style="height: 20px; width: 60px" src="{{ user.profilePic }}"></td>
             <td ><a href="#/users/{{user.id}}">{{user.firstName + ' ' + user.lastName }}</a></td>
             <td>{{ user.email }}</td>
             <td>{{ user.address.city }}</td>

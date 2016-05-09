@@ -9,7 +9,6 @@ myApp.run(function($rootScope, $window) {
     };
 });
 myApp.config(function($routeProvider){
-  console.log("something");
   $routeProvider.caseInsensitiveMatch = true;
   $routeProvider
       .when('/', {
@@ -88,21 +87,18 @@ myApp.controller('AddUserController', ['$scope','$http','$log','$timeout', funct
   $scope.added =''; // For storing status of the submit operation
 
   $scope.submit = function(){
-      console.log("Submitted called");
     $http({
       method: 'POST',
       data : JSON.stringify($scope.formData),
       url: 'http://mocker.egen.io/users',
     }).then(function successCallback(response) {
       $log.info("successfully added new user");
-        console.log("Success called");
       $scope.added = true; // Enabling success message
       $scope.formData = {}; // Replacing all fields with empty string
-      // $timeout(function(){
-      //   $scope.added = '';
-      // }, 2000) // After success, slear the success message after 2 seconds
+      $timeout(function(){
+        $scope.added = '';
+      }, 2000) // After success, slear the success message after 2 seconds
     }, function errorCallback(response) {
-        console.log("Failed called");
       $log.error("failed to add new user");
       $scope.added = false;  // Enabling error message
     });
